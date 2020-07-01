@@ -1,6 +1,8 @@
 const VueSwitchesMap = {
   // switchesKey: {
-  //   value: false,
+  //   state: {
+  //     value: false,
+  //   }
   //   on: () => {},
   //   off: () => {},
   // }
@@ -42,7 +44,7 @@ export const VueSwitches = {
 
       return switches
     },
-    getSwitches () {
+    getSwitches () { 
       if (this.switchesKey) {
         if (this.switchesKey in VueSwitchesMap) {
           this.switches = VueSwitchesMap[this.switchesKey]
