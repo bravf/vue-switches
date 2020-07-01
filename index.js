@@ -26,15 +26,17 @@ export const VueSwitches = {
   methods: {
     createSwitches () {
       const switches = {
-        value: this.initValue,
+        state: {
+          value: this.initValue,
+        },
         on: () => {
-          switches.value = true
+          switches.state.value = true
         },
         off: () => {
-          switches.value = false
+          switches.state.value = false
         },
         toggle: () => {
-          switches.value = !switches.value
+          switches.state.value = !switches.value
         }
       }
 

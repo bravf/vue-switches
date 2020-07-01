@@ -3,16 +3,16 @@
   <body>
     <div id="app">
       <vue-switches switches-key="pop">
-        <template v-slot="{ value, on, off, toggle }">
-          <div v-if="value">这是一个弹层，balbabalbalblabla......</div>
+        <template v-slot="{ state, on, off, toggle }">
+          <div v-if="state.value">这是一个弹层，balbabalbalblabla......</div>
           <button @click="on">显示弹层</button>
-          <button @click="off">隐藏弹层</button>
+          <button @click="state.value = false">隐藏弹层</button>
           <button @click="toggle">toggle弹层</button>
         </template>
       </vue-switches>
       <vue-switches switches-key="pop">
-        <template v-slot="{ value }">
-          <div v-if="value">哈哈</div>
+        <template v-slot="{ state }">
+          <div v-if="state.value">哈哈</div>
         </template>  
       </vue-switches>
     </div>
