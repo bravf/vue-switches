@@ -12,7 +12,7 @@ export const VueSwitches = {
   props: {
     switchesKey: String,
     initValue: {
-      type: Boolean,
+      type: Boolean | Number | String,
       default: false,
     },
     tag: {
@@ -31,14 +31,15 @@ export const VueSwitches = {
         state: {
           value: this.initValue,
         },
-        on: () => {
-          switches.state.value = true
+        on: (value) => {
+          const isUndefValue = typeof value === 'undefined'
+          switches.state.value = isUndefValue ? true : value
         },
         off: () => {
           switches.state.value = false
         },
         toggle: () => {
-          switches.state.value = !switches.value
+          switches.state.value = !switches.state.value
         }
       }
 
